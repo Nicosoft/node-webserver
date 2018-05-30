@@ -24,9 +24,11 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use((req, res, next) => {
-    res.render('maintenance.hbs');
-})
+// app.use((req, res, next) => {
+//     res.render('maintenance.hbs');
+// })
+
+
 
 app.get('/', (req, res) => {
     res.render('home.hbs', {
@@ -35,6 +37,13 @@ app.get('/', (req, res) => {
         welcomeMessage: 'Welcome to Awesome Website'
     });
 });
+
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects'
+    })
+})
 
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
